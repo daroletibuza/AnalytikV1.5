@@ -1,0 +1,219 @@
+%Dokumentklasse
+
+%draft als optionohne bilder für bessere performance
+%\documentclass[a4paper,12pt,]{scrreprt}
+
+%normal mit Bildern
+\documentclass[
+a4paper,
+12pt,
+draft=True]
+{scrartcl}
+
+%Section als Chapter
+\RedeclareSectionCommand[%
+%beforeskip = -1sp plus -1sp minus -1sp,% kleinster negativer Wert, um den Absatzeinzug nach der Überschrift zu verhindern.
+afterskip = 1.5 \baselineskip plus -1sp minus 1sp,
+font = \Huge,
+]{section}
+
+\usepackage[left= 3cm,right = 3cm, bottom = 3cm,top = 3cm]{geometry}
+%\usepackage[onehalfspacing]{setspace}
+
+% ============= Packages =============
+% Dokumentinformationen
+\usepackage[
+pdftitle={Praktikum - Umwelttechnik},
+pdfsubject={},
+pdfauthor={Roman-Luca Zank},
+pdfkeywords={},	
+%Links nicht einrahmen
+hidelinks
+]{hyperref}
+
+%nur Text zum prüfen des Umfangs
+
+% Standard Packages
+%\usepackage[bottom]{footmisc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage[T1]{fontenc}
+%\usepackage{helvet}
+
+%\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{mhchem}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage[bottom]{footmisc}
+\usepackage{setspace}\usepackage{threeparttable}
+%==================================================================
+%\begin{threeparttable} 
+%	\begin{tabular}{|l|c|r|} 
+%		\hline 
+%		A & B & C \\
+%		\hline
+%		1 & 2 & 3 \tnote{1} \\
+%		\hline
+%	\end{tabular} 
+%	\begin{tablenotes}\footnotesize 
+%		\item[1] Prognose 2003 
+%	\end{tablenotes}
+%====================================================================
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[list=true]{subcaption}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+%\usepackage{ulem}
+\usepackage{mathtools}
+\usepackage{adjustbox}
+\usetikzlibrary{patterns}
+\usepackage{pdfpages}
+
+%Einheitenpackage
+\usepackage{siunitx}  
+\sisetup{	locale = DE, 
+	per-mode=fraction,
+	inter-unit-product=\ensuremath{\cdot},
+	detect-weight = true,
+	quotient-mode=fraction
+}
+%neue Einheiten definieren
+\DeclareSIUnit\xyz{xyz}	
+\DeclareSIUnit\rpm{rpm}	
+\DeclareSIUnit\mws{mWS}	
+\DeclareSIUnit\degrees{^\circ}	
+
+%Automatisch cdot statt *
+\DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
+
+
+%Tabelle
+\usepackage{tabularx}
+\usepackage{tabulary}
+
+%nur letzte Zeile der Gleichung nummerieren
+\makeatletter
+\def\Let@{\def\\{\notag\math@cr}}
+\makeatother
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+%Abkürzungsverzeichnis
+\usepackage{acronym}
+
+%kein Abstand bei neuem Kapitel vom Seitenanfang
+%\vspace*{2.3\baselineskip} = ORIGINAL
+%\renewcommand*{\chapterheadstartvskip}{\vspace*{.0\baselineskip}}
+
+%nicht einrücken nach Absatz
+\setlength{\parindent}{0pt}
+
+\urlstyle{same}
+
+
+% ============= Kopf- und Fußzeile =============
+\pagestyle{fancy}
+%
+\lhead{}
+\chead{}
+\rhead{}%\slshape }%\leftmark}
+%%
+\lfoot{}
+\cfoot{}
+\rfoot[{\thepage\ of \pageref*{LastPage}}]{Seite \thepage\ von \pageref*{LastPage}}
+%%
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%\renewcommand{\chapterpagestyle}{fancy}
+
+%Fußnotelinie
+%\let\footnoterule
+
+%Fußnote mit Klammer
+\renewcommand*{\thefootnote}{(\arabic{footnote})}
+
+%Abb. statt Abbildung
+\addto\captionsngerman{%
+	\renewcommand{\figurename}{Abb.}%
+	\renewcommand{\tablename}{Tab.}%
+}
+
+% ============= Package Einstellungen & Sonstiges ============= 
+%Besondere Trennungen
+%\hyphenation{De-zi-mal-tren-nung}
+\usepackage[none]{hyphenat}
+\hyphenpenalty=5000
+\tolerance=5000
+\providecommand\phantomsection{}
+
+\usepackage{mathtools}
+
+
+% ============= Dokumentbeginn =============
+
+\begin{document}
+%Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
+\pagestyle{empty}
+
+%\include{01_titel}
+
+%\include{14_danksagungen}
+
+%\include{15_zusammenfassung}
+
+% Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
+\cleardoubleoddpage
+
+% Pagestyle für Titelblatt leer
+\pagestyle{empty}
+
+%Seite zählen ab
+\setcounter{page}{0}
+
+%Titelblatt
+\include{01_titel} %Prokolle
+%\include{01_titel2} %Seminar-/Abschlussarbeit
+
+% Pagestyle für Rest des Dokuments
+\pagestyle{fancy}
+
+%Inhaltsverzeichnis
+\tableofcontents
+\thispagestyle{empty}
+
+%Inhalt
+%\include{02_verzeichnisse}
+
+%\include{0A_abkurzungsverzeichnis}
+
+\input{03_aufgabenstellung}
+
+\input{04_physik}
+\input{04_geraete}
+
+\input{05_durchfuerung}
+
+\input{06_ergebnisse}
+
+\input{07_diskussion}
+
+\input{011_fehlerbetrachtung}
+
+\include{09_anhang}
+
+\include{08_literatur}
+
+%\include{09_erklaerung}
+
+\end{document}

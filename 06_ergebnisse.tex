@@ -2,15 +2,15 @@
 \label{sec:ergebnisse}
 \subsection{Versuchsteil 1: Aufnahme und Glättung des Polarogramms}
  
- %Start
- \begin{figure}[h!]
- 	\centering
- 	\includegraphics[width=1.0\textwidth]{img/Daten_farbig2}
- 	\caption{Strom-Spannungskurven (Polarogramme) des Versuchsteils 1}
- 	\label{fig:daten_farbig}
- \end{figure}
- \FloatBarrier
- %Ende   
+% %Start
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=1.0\textwidth]{img/Daten_farbig2}
+% 	\caption{Strom-Spannungskurven (Polarogramme) des Versuchsteils 1}
+% 	\label{fig:daten_farbig}
+% \end{figure}
+% \FloatBarrier
+% %Ende   
    
 
  \begin{center}
@@ -129,41 +129,41 @@ Anschließend wurde noch sinnvoll gerundet.
 	$$f_1(x)=y=-19,166*x - 113,19 $$ 
 	$$f_2(x)=y=-18,144*x - 135,85 $$ 
 	
-	\begin{figure}[h!]
-		\begin{center}
-			\resizebox{0.9\textwidth}{!}{
-				\begin{tikzpicture}[trim axis left, trim axis right]
-				\begin{axis}[
-				axis lines = middle,
-				width = 20cm,
-				height = 11cm,
-				xmin = -10,
-				xmax = 20,
-				%	ymin = -0.1,
-				%	ymax = 0,
-				%	ytick = {-4.5,-4,...,-1},
-				xtick = {-10,-9,...,20},
-				ylabel={Stromstärke in \si{\nano \ampere}},
-				y label style={at={(0.25,0.40)}, rotate=90},
-				xlabel={Konzentration der Blei-Standard-Zugabe in \si{\milli \gram \per \milli \liter}},
-				legend style={at={(0.75,0.45)},anchor=west},
-				y dir = reverse,
-				]
-				\addplot table {datenm1.dat};
-				\addplot +[mark=none, dashed, black, domain=-10:20] {-19.166*x - 113.19};
-				\addplot table {datenm2.dat};
-				\addplot +[mark=none, dotted, black, domain=-10:20] {-18.144*x - 135.85};
-				
-				\legend{Messreihe 1, Regression Messreihe 1,Messreihe 2, Regression Messreihe 2};
-				\end{axis}
-				\end{tikzpicture}
-			}
-			\caption{Gemessene Stromstärken in Abhängigkeit von der Konzentration der Blei-Standardzugabe (siehe Tab. \ref{tab:messreihe1} und Tab. \ref{tab:messreihe2})}
-			\label{dia:lnr/lnc}
-		\end{center}
-	\end{figure}
-	\FloatBarrier
-	\vspace*{-5mm}
+%	\begin{figure}[h!]
+%		\begin{center}
+%			\resizebox{0.9\textwidth}{!}{
+%				\begin{tikzpicture}[trim axis left, trim axis right]
+%				\begin{axis}[
+%				axis lines = middle,
+%				width = 20cm,
+%				height = 11cm,
+%				xmin = -10,
+%				xmax = 20,
+%				%	ymin = -0.1,
+%				%	ymax = 0,
+%				%	ytick = {-4.5,-4,...,-1},
+%				xtick = {-10,-9,...,20},
+%				ylabel={Stromstärke in \si{\nano \ampere}},
+%				y label style={at={(0.25,0.40)}, rotate=90},
+%				xlabel={Konzentration der Blei-Standard-Zugabe in \si{\milli \gram \per \milli \liter}},
+%				legend style={at={(0.75,0.45)},anchor=west},
+%				y dir = reverse,
+%				]
+%				\addplot table {datenm1.dat};
+%				\addplot +[mark=none, dashed, black, domain=-10:20] {-19.166*x - 113.19};
+%				\addplot table {datenm2.dat};
+%				\addplot +[mark=none, dotted, black, domain=-10:20] {-18.144*x - 135.85};
+%				
+%				\legend{Messreihe 1, Regression Messreihe 1,Messreihe 2, Regression Messreihe 2};
+%				\end{axis}
+%				\end{tikzpicture}
+%			}
+%			\caption{Gemessene Stromstärken in Abhängigkeit von der Konzentration der Blei-Standardzugabe (siehe Tab. \ref{tab:messreihe1} und Tab. \ref{tab:messreihe2})}
+%			\label{dia:lnr/lnc}
+%		\end{center}
+%	\end{figure}
+%	\FloatBarrier
+%	\vspace*{-5mm}
 	
 %	\begin{figure}[h!]
 %		\begin{center}
@@ -337,38 +337,38 @@ Anschließend wurde noch sinnvoll gerundet.
 	\vspace*{-2.5mm}
 	%Tabelle ENDE
 	
-		\begin{figure}[h!]
-		\begin{center}
-			\resizebox{0.9\textwidth}{!}{
-				\begin{tikzpicture}[trim axis left, trim axis right]
-				\begin{axis}[
-				axis lines = middle,
-				width = 20cm,
-				height = 11cm,
-				xmin = -10,
-				xmax = 20,
-				%	ymin = -0.1,
-				%	ymax = 0,
-				%	ytick = {-4.5,-4,...,-1},
-				xtick = {-10,-9,...,20},
-				ylabel={Stromstärke in \si{\nano \ampere}},
-				y label style={at={(0.25,0.40)}, rotate=90},
-				xlabel={Konzentration der Blei-Standard-Zugabe in \si{\milli \gram \per \milli \liter}},
-				legend style={at={(0.75,0.45)},anchor=west},
-				y dir = reverse,
-				]
-				\addplot table {datenm3.dat};
-				\addplot +[mark=none, dashed, black, domain=-10:20] {-18.792*x - 124.153};
-				
-				\legend{Messreihen 1+2 (korrigiert), Regression Messreihe 1+2 (korrigiert)};
-				\end{axis}
-				\end{tikzpicture}
-			}
-			\caption{Korrigierte Kalibrierkurve der Messreihen 1 und 2}
-			\label{dia:kalibrier_neu}
-		\end{center}
-	\end{figure}
-	\FloatBarrier
+%		\begin{figure}[h!]
+%		\begin{center}
+%			\resizebox{0.9\textwidth}{!}{
+%				\begin{tikzpicture}[trim axis left, trim axis right]
+%				\begin{axis}[
+%				axis lines = middle,
+%				width = 20cm,
+%				height = 11cm,
+%				xmin = -10,
+%				xmax = 20,
+%				%	ymin = -0.1,
+%				%	ymax = 0,
+%				%	ytick = {-4.5,-4,...,-1},
+%				xtick = {-10,-9,...,20},
+%				ylabel={Stromstärke in \si{\nano \ampere}},
+%				y label style={at={(0.25,0.40)}, rotate=90},
+%				xlabel={Konzentration der Blei-Standard-Zugabe in \si{\milli \gram \per \milli \liter}},
+%				legend style={at={(0.75,0.45)},anchor=west},
+%				y dir = reverse,
+%				]
+%				\addplot table {datenm3.dat};
+%				\addplot +[mark=none, dashed, black, domain=-10:20] {-18.792*x - 124.153};
+%				
+%				\legend{Messreihen 1+2 (korrigiert), Regression Messreihe 1+2 (korrigiert)};
+%				\end{axis}
+%				\end{tikzpicture}
+%			}
+%			\caption{Korrigierte Kalibrierkurve der Messreihen 1 und 2}
+%			\label{dia:kalibrier_neu}
+%		\end{center}
+%	\end{figure}
+%	\FloatBarrier
 	\vspace*{-5mm}
 	
 	
