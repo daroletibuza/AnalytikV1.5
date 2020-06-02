@@ -1,0 +1,15 @@
+* DONE Aufgabenstellung
+
+* TODO Geräte und Chemikalien
+
+* TODO Durchführung
+
+* TODO Ergebnisse
+
+** TODO Erg.Versuchsteil1
+
+** TODO Erg.Versuchsteil2
+
+* TODO Diskussion
+
+* TODO Literaturquellen

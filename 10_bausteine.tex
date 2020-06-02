@@ -1,0 +1,329 @@
+\chapter{Bausteine}
+
+\section{Beispiel für Tabelle}
+
+%Tabelle START
+\vspace*{-2.5mm}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+	\centering
+	\caption{Abmessungen der Probekörper vor dem Zugversuch}
+	\label{tab:tabelle1}
+	%\resizebox{10cm}{!}{
+	\begin{tabulary}{\textwidth}{C|CCC}
+		\hline
+		\textbf{Probe}  &\textbf{Breite [mm]}&\textbf{Dicke [mm]}&\textbf{Anf.-länge[mm]} \\ 
+		\hline
+		Kupfer (gewalzt) & 12,5 &3,00&50\\
+		Kupfer (geglüht) & 12,5&3,00&50\\
+		PA6 & 10,0&4,00&50\\
+		PP (EPR-30\% Kautschuk) & 9,9 &3,95&50\\
+		\hline
+	\end{tabulary}
+	%}
+\end{table}
+
+\FloatBarrier
+\vspace*{-2.5mm}
+%Tabelle ENDE
+
+\section*{Tabelle mit Itemize}
+%Tabelle START
+\vspace*{-2.5mm}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+	\centering
+	\caption*{Vor- und Nachteile der Geothermie}
+	\label{tab:tabelle1}
+	\begin{tabulary}{\textwidth}{C|C}
+		\hline
+		\textbf{Vorteile}  &\textbf{Nachteile} \\ 
+		\hline
+		&\\
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{itemize}
+				\item Strom, Wärme und Kälte wird erzeugt
+				\item keine saisonalen und tageszeitlichen Schwankungen
+				\item 	quasi-regenerativ
+				\item 	nachfrage-gerechte Energiebereitstellung
+				\item Erzeugungspotenzial sehr hoch 
+				\item 	grundsätzlich standortunabhängig
+			\end{itemize}
+		\end{minipage} & 
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{itemize}
+				\item hohe Anschaffungskosten
+				\item abhängig von geologischen Gegebenheiten
+				\item geringer Stromwirkungsgrad (thermodynamisch bedingt)
+				\item keine Marktdurchdringung in DE
+				\item erfahrene Bauunternehmen notwendig
+				\item gute Vorerkundung und Überwachung notwendig
+			\end{itemize}
+		\end{minipage}\\
+	\end{tabulary}
+\end{table}
+\FloatBarrier
+\vspace*{-2.5mm}
+%Tabelle ENDE
+
+\newpage
+
+\section*{Beispiel für Skalierbare Tabelle}
+%TAbelle Start
+\vspace*{-2.5mm}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+	\centering
+	\caption*{}
+	\resizebox{0.5\textwidth}{!}{
+		\begin{tabulary}{\textwidth}{C|C|C|C}
+			\textbf{Name} & \textbf{Anwendung}&\textbf{Gleichung}&\textbf{Stoffkonstante} \\ 
+			\hline  
+			KICK& $x_{80_\omega}>\SI{50}{\milli\meter}$ &$e_{KICK}=c_K*log(\frac{x_{80_\omega}}{x_{80_\alpha}})$&$c_K=1,15*\frac{c_B}{\sqrt{0,05\si{\meter}}} \left[\si{\raiseto{2}\meter\per\raiseto{2}\second}\right]$\\
+			BOND&$\SI{50}{\micro\meter}<x_{80_\omega}<\SI{50}{\milli\meter}$&$e_{BOND}=c_B*\left(\frac{1}{\sqrt{x_{80_\omega}}}-\frac{1}{\sqrt{x_{80_\alpha}}}\right)$& $c_B$: tabelliert $\left[\si{\raiseto{2,5}\meter\per\raiseto{2}\second}\right]$\\ 
+			RITTER& $x_{80_\omega}>\SI{50}{\micro\meter}$&$e_{RITT}=c_R*\left(\frac{1}{x_{80_\omega}}-\frac{1}{x_{80_\alpha}}\right)$&$c_R= 0,5*c_B*\sqrt{\SI{5e-5}{\meter}}$ \\  
+	\end{tabulary}}
+\end{table}
+\FloatBarrier
+%Ende TAbelle
+
+\section{Befehlszeilen in Text einfügen}
+Befehlzeilen aus der "Latex-Sprache"\ lassen sich nicht ohne weiteres im Text darstellen. Das System erkennt diese als solche und gibt warnhinweise aus. In der Regel werden die Befehle dann auch falsch dargestellt. Umgehen lässt sich diese Problematik mit der verbatim-Umgebung. In ihren Grenzen werden Eingaben 1:1 dargestellt wie eingegeben. Die Funktionsweise soll nachfolgend durch ein Beispiel verdeutlicht werden.
+\begin{verbatim*}
+
+\begin{verbatim}
+\usepackage{Beispieltrolllllollllolll} 
+\end{verbatim}
+
+\end{verbatim*}
+
+Sollte besonderer Wert auf die Kenntlichmachung der Leerzeichen gelegt werden kann auch mit \texttt{verbatim*} gearbeitet werden.
+
+\section{Seitenübergreifende, lange Tabellen}
+
+Tabellen welche Messwerte in einem solchen Umfang enthalten, dass sie nicht auf einer einzelnen A4-Seite Platz finden, können mit dem Paket \begin{verbatim}
+\usepackage{longtable} 
+\end{verbatim}
+in ein Dokument eingepflegt werden wie folgendes Beispiel belegt.:
+\begin{longtable}[c]{lllll}
+	\caption{Dehnungstabelle}\\
+	\label{alles}
+	$Zeit [HH:MM:SS]$ & $\Delta l_{PE} [mm]$ & $\varepsilon_{PE}$ & $\Delta l_{Pb} [mm]$ & $\varepsilon_{Pb}$ \\
+	\hline
+	\endfirsthead
+	%\caption{}\\
+	$Zeit [HH:MM:SS]$ & $\Delta l_{PE} [mm]$ & $\varepsilon_{PE}$ & $\Delta l_{Pb} [mm]$ & $\varepsilon_{Pb}$ \\ 
+	\hline
+	\endhead
+	\multicolumn{5}{r}{Fortsetzung auf n{\"a}chster Seite}\\
+	\endfoot
+	\hline
+	\multicolumn{5}{r}{} \\
+	\endlastfoot
+	% Ab hier kommt der Inhalt der Tabelle
+	00:00:00 & 3,00 & 0,11 & 3,30 & 0,12\\
+	00:00:10 & 3,80 & 0,14 & 3,42 & 0,13\\
+	00:00:20 & 4,15 & 0,16 & 3,53 & 0,13\\
+	00:00:30 & 4,43 & 0,17 & 3,68 & 0,14\\
+	00:00:40 & 4,61 & 0,17 & 3,71 & 0,14\\
+	00:00:50 & 4,80 & 0,18 & 3,81 & 0,14\\
+	00:01:00 & 4,95 & 0,19 & 4,12 & 0,15\\
+	00:20:00 & 8,03 & 0,30 &  & \\
+\end{longtable} 
+
+\section{Diagramme}
+Diagramme lassen sich unter anderem mit dem Paket 
+\begin{verbatim}
+\usepackage{pgfplots} 
+\end{verbatim}
+implementieren.
+Um das Dokument einigermaßen klein zu halten empfehle ich folgendes weiters Paket zu nutzen.
+\begin{verbatim}
+\usepackage{csvsimple} 
+\end{verbatim}
+Es erleichter das importieren von Datensätzen aus .csv Dateien. Die .csv Datei muss folgenden Anforderungen genügen:- Dezimaltrenner Punkt
+\begin{itemize}
+	\item Dezimaltrenner Punkt
+	\item Jede Zeile umgebrochen
+	\item Koordinaten durch komma getrennt
+	\item Spalten beschriften z.B x,y oder a,b
+\end{itemize}
+
+Sollte man eine Tabellenkalkulationsdatei in eine csv Datei konvertiert haben, hat dieses meist die Falsche Form. Durch die Funktion suchen und ersetzen (bsp emacs) können aber sehr schnell die nötigen Korrekturen erfolgen. 
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[
+		width=12cm,
+		height=6cm,
+		xlabel=Zeit in Sekunden,
+		ylabel=Dehnung]
+		
+		\begin{scope}[brown]
+		\draw[brown] ({axis cs:10,0}|-{rel axis cs:0,1}) -- ({axis cs:10,0}|-{rel axis cs:0,0});
+		\draw[brown] ({axis cs:120,0}|-{rel axis cs:0,1}) -- ({axis cs:120,0}|-{rel axis cs:0,0});
+		\end{scope} 
+		
+		\addplot table [x=a, y=b, col sep=comma] {data/KriechkurvePb.csv};
+		\end{axis}
+		\end{tikzpicture}
+		\caption{Kriechkurve Blei}
+		\label{kkb}
+	\end{center}
+\end{figure} 
+\FloatBarrier                     
+
+\section*{Beispiel für Berechnungen}
+Die Berechnung der wahren Spannung $\sigma_{W}$ bei Höchstkraft erfolgt unter der Annahme, dass der Prüfkörperquerschnitt noch 60\% des Ausgangsquerschnitts beträgt. Die Berechnung erfolgt ab Gleichung \ref{ber1}.\\ 
+
+%Berechnung der Fläche A
+\textbf{Fläche} $\boldsymbol{A}$ \textbf{:}
+%Start
+\begin{flalign}
+A 	&= \frac{\pi}{4}*d^2\\
+&=\frac{\pi}{4}*(\SI{80}{\milli \meter})^2
+\end{flalign}
+%Ende
+
+\section{Beispiel für ein Bild}
+
+%Start
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.60\textwidth]{img/skizzepruef3}
+	\caption{Skizze Prüfkörperbemaßung}
+	\label{skizzepruef}
+\end{figure}
+\FloatBarrier
+%Ende
+
+\newpage
+
+\section{Beispiel für zwei Bilder}
+\label{sec:versuchsaufbau}
+
+%Start
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{Aufbau2}
+		\caption{Skizze zum Versuchsaufbau}
+		\label{fig:sub1}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.6\textwidth]{img/Aufbau1}
+		\caption{realer Versuchsaufbau}
+		\label{fig:sub2}
+	\end{subfigure}
+	\caption{Versuchsaufbau als Skizze und in Realität}
+	\label{fig:aufbau} 
+\end{figure}
+\FloatBarrier
+%Ende
+
+\newpage
+
+
+\section{Beispiel für vier Bilder}
+%Start
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{img/Kupfer_gewalzt}
+		\caption{Kupfer (gewalzt)}
+		\label{fig:sub3}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{img/Kupfer_weich}
+		\caption{Kupfer (geglüht)}
+		\label{fig:sub4}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{img/PA6}
+		\caption{PA6}
+		\label{fig:sub5}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{img/PP}
+		\caption{PP (ERP-30\% Kautschuk)}
+		\label{fig:sub6}
+	\end{subfigure}
+	
+	\caption{Bruchstellennahaufnahmen der Probekörper}
+	\label{fig:bruchstellen} 
+\end{figure}
+\FloatBarrier
+%Ende
+
+\section{Beispiel Einheiten}
+
+\begin{align*}
+\textbf{$\SI{12,0/12}{\kg\meter\per\second \raiseto{5} \per \xyz}*\SI{13}{\per\raiseto{-2}\meter}=\SI{256}{}$}
+\end{align*}
+
+\begin{align}
+\SI{12,0/12}{\meter\per\joule}*\SI{13}{\gram}=\SI{256}{\coulomb}
+\end{align}
+
+\newpage
+
+\section{Beispiel für Mini-Formelsammlung}
+\begin{flalign}
+\label{gl1}
+\text{\textbf{Dehnung (Def.)} } \boldsymbol{\varepsilon} \text{ \textbf{:}} && \hspace*{-1em}  \varepsilon=\frac{\Delta l}{l_0} &&
+\end{flalign}
+
+\begin{flalign}
+\label{gl2}
+\text{\textbf{norminelle Spannung} } \boldsymbol{\sigma} \text{\textbf{:}} && \hspace*{-3em} \sigma=\frac{F}{A_0} &&
+\end{flalign}
+
+\begin{flalign}
+\label{gl3}
+\text{\textbf{Sekantenmodul (Kunststoffe) }} \boldsymbol{E_S} \text{ \textbf{:}} && E_S=\frac{\sigma_2-\sigma_1}{\varepsilon_2-\varepsilon_1}=\frac{F_2-F_1}{0,002*A_0} &&
+\end{flalign}
+
+\begin{flalign}
+\label{gl4}
+\text{\textbf{E-Modul (Metalle) }} \boldsymbol{E_M} \text{ \textbf{:}} && \hspace*{5em} E_M=\frac{\sigma}{\varepsilon}=\frac{\sigma_2-\sigma_1}{\varepsilon_2-\varepsilon_1}=\frac{R_{p_{0.2\%}}}{0,2\%} &&
+\end{flalign}
+
+\begin{flalign}
+\label{gl5}
+\text{\textbf{Bruchdehnung} } \boldsymbol{A} \text{\textbf{:}} && \hspace*{6em} A= \frac{l_{u}-l_{0}}{l_{0}}*100\% &&
+\end{flalign}
+
+\begin{flalign}
+\label{gl6}
+\text{\textbf{Ausgangsquerschnitt } } \boldsymbol{S_0} \text{\textbf{:}} && \hspace*{3em} S_{0}= Breite*Dicke &&
+\end{flalign}
+\begin{flalign}
+\label{gl7}
+\text{\textbf{wahre Spannung} } \boldsymbol{\sigma_{W}} \text{\textbf{:}} &&\hspace*{1em} \sigma_{W}=\frac{F_{max}}{S_{End}}&&
+\end{flalign}
+\begin{flalign}
+\label{gl8}
+\text{\textbf{Brucheinschnürung } } \boldsymbol{Z} \text{\textbf{:}} && \hspace*{5em} Z=\frac{S_0-S_u}{S_{o}}*100\% &&
+\end{flalign}
+
+\newpage
+
+\section*{Fußnoten}
+%Start
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.85\textwidth]{tabdia/kfwerte}
+	\caption*{$\text{k}_\text{f}$-Werte der Proben 1 bis 11 \protect\footnotemark[1]}
+	\label{}
+\end{figure}
+\FloatBarrier
+%Ende
+
+\footnotetext[1]{bezogen auf $V=\SI{50}{\milli \liter}$ und $h=\SI{10}{\milli \meter}$}

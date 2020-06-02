@@ -1,0 +1,20 @@
+Citavi Export Filter einrichten 
+
+Biblography-Style in LaTex: "unsrtdin" 
+
+Buch (Monographie) - @book
+Buch (Sammelwerk) - @book
+Internetdokument - @booklet
+Norm - @misc
+Patent - @misc
+Film (Video) - @misc
+Zeitschriftenaufsatz - @article
+
+Felder ändern:
+"Zuletzt geprüft am" - ändern von urldate in lastchecked (nur Datum notwendig)
+
+Export erfolgt mit BibLatex- Package
+Export erolgt OHNE URL-Package
+
+
+
