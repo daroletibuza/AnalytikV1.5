@@ -146,7 +146,30 @@
 \FloatBarrier 
 % \vspace*{-2.5mm}
 %Tabelle ENDE
-\subsection{Manuelle Berechnung der relativen Standardabweichung}
+
+\textbf{Berechnung des Mittelwertes:}
+\begin{flalign}
+\label{Gl:Mittelwert-Beispielrechnung1}
+\bar{x} &= \frac{\sum_{n=1}^{N}x_n}{N}
+\end{flalign}
+\begin{flalign}
+\label{Gl:Mittelwert-Beispielrechnung2}
+\bar{x} &= \frac{1,32\%+1,92\%}{2}\\
+&= \underline{2,12\%}
+\end{flalign}
+
+\textbf{Berechnung der Standardabweichung:}
+\begin{flalign}\label{Gl:Standardabweichung-Beispielrechnung}
+s &= \sqrt{\frac{\sum_{n=1}^{N}(x_n-\bar{x})^2}{N-1}}
+\end{flalign}
+%	\begin{footnotesize}
+\begin{flalign}
+s &= \sqrt{\frac{(2,32\%-2,12\%)^2+(1,92\%-2,12\%)^2}{1}}\\
+&= \underline{0,285\%}
+\end{flalign}
+%	\end{footnotesize}
+
+\textbf{Manuelle Berechnung der relativen Standardabweichung:}\\
 Die manuelle Berechnung der relativen Standardabweichung erfolgt analog der \mbox{Gleichung (\ref{gl:S_rel})}. 
 %Die mit dem Taschenrechner erhaltenen Ergebnisse sind in den Tabellen \ref{tab:MesswerteTiterbestimmung} bis \ref{tab:MesswertePoliamid} in der Sektion \glqq Manuell\grqq  \, aufgeführt. 
 \begin{flalign}\label{gl:S_rel}
@@ -155,7 +178,7 @@ Die manuelle Berechnung der relativen Standardabweichung erfolgt analog der \mbo
 	&=0,134321=\underline{\underline{13,43\%}}
 \end{flalign}
 
-\subsection{Manuelle Titerbestimmung}
+\textbf{Manuelle Titerbestimmung:}\\
 Die Berechnung des Titers $f$ der KF-Lösung ist in Gleichung (\ref{gl:titer}) beispielhaft für ein Wertepaar dargestellt. Die verwendeten Werte entstammen der ersten Zeile der Tabelle \ref{tab:MesswerteTiterbestimmung}. 
 \begin{flalign}\label{gl:titer}
 	f&=\frac{c_{ist}}{c_{soll}}\\
@@ -163,7 +186,10 @@ Die Berechnung des Titers $f$ der KF-Lösung ist in Gleichung (\ref{gl:titer}) b
 	&=\frac{\frac{\SI{0,005}{\gram}+\SI{4,3}{\micro\gram\per\minute}*\SI{1,55}{\minute}*10^{-6}}{\SI{1,0405}{\milli\liter}+\SI{0,7}{\micro\liter\per\minute}*\SI{1,55}{\minute}*10^{-3}}*10^{3}}{\SI{5,0}{\milli\gram\per\milli\liter}}\\
 	&=\underline{\underline{0,9614}}
 \end{flalign}
-\subsection{Manuelle Bestimmung des Wassergehaltes}
+
+\newpage
+
+\textbf{Manuelle Bestimmung des Wassergehaltes:}\\
 Beispielhaft wird nachfolgend in Gleichung (\ref{gl:wassergehalt}) die manuelle Berechnung des Wassergehaltes der flüssigen Probe Isopropanol dargestellt. Dazu wurden Messwerte der Tabelle \ref{tab:MesswerteIsopropanol} für die Berechnung verwendet. Für den Titer wurde der Mittelwert aus Tabelle \ref{tab:MesswerteTiterbestimmung} genutzt.
 %Aus dem Vorgängerprotokoll___Eiheiten sind totaler schwachsinn!
 %\begin{flalign}\label{gl:wassergehalt}
@@ -172,8 +198,8 @@ Beispielhaft wird nachfolgend in Gleichung (\ref{gl:wassergehalt}) die manuelle 
 %\end{flalign}
 
 \begin{flalign}\label{gl:wassergehalt}
-	Wassergehalt [\%]&=\frac{(V_{EQ}+t*DRIFTV)*\bar{c}+DRIFT*t}{m_{Probe}}\\[2mm]
-	&=\frac{(\SI{0,00925}{\milli\liter}+\frac{\SI{1,18}{\minute}*\SI{5,5}{\micro\liter\per\minute}}{1000})*\SI{5,22732}{\milli\gram\per\milli\liter}
-		+\frac{\SI{28,6}{\micro\gram\per\minute}*\SI{1,18}{\minute}}{1000}}{1000*\SI{0,4037}{\gram}}*100\%\\
-	&=\underline{\underline{0,028741\%}}
+	W [\%]&=\frac{(V_{EQ}+t*DRIFTV)*\bar{c}+DRIFT*t}{m_{Probe}}\\[2mm]
+	&=\frac{(\SI{0,00925}{\milli\liter}+\SI{1,18}{\minute}*\SI{5,5}{\micro\liter\per\minute})*\SI{5,22732}{\milli\gram\per\milli\liter}
+		+\SI{28,6}{\micro\gram\per\minute}*\SI{1,18}{\minute}}{\SI{0,4037}{\gram}}*100\%\\
+	&=\underline{\underline{0,029\%}}
 \end{flalign}
