@@ -105,6 +105,8 @@
 		\cline{1-3}
 		\textbf{rel.Strd.\-abweichung}&7,33\%&8,79\% \\
 		\hline
+		\textbf{Vertrauensintervall}&$0,0407\% \pm 0,0048\%$&$\SI{0,3536}{\milli \gram}\ \pm \SI{0,0495}{\milli \gram}$\\
+		\hline
 		
 	\end{tabulary}
 	%}
@@ -139,6 +141,8 @@
 		\cline{1-3}
 		\textbf{rel.Strd.\-abweichung}&13,43\%&12,32\% \\
 		\hline
+		\textbf{Vertrauensintervall}&$2,1203\% \pm 2,5588\%$&$\SI{4,2628}{\milli \gram} \pm \SI{4,718}{\milli \gram}$ \\
+		\hline
 		
 	\end{tabulary}
 	%}
@@ -146,6 +150,15 @@
 \FloatBarrier 
 % \vspace*{-2.5mm}
 %Tabelle ENDE
+
+\textbf{Manuelle Titerbestimmung:}\\
+Die Berechnung des Titers $f$ der KF-Lösung ist in Gleichung (\ref{gl:titer}) beispielhaft für ein Wertepaar dargestellt. Die verwendeten Werte entstammen der ersten Zeile der Tabelle \ref{tab:MesswerteTiterbestimmung}. 
+\begin{flalign}\label{gl:titer}
+f&=\frac{c_{ist}}{c_{soll}}\\
+&=\frac{\frac{m_{Probe}+Drift*Dauer}{V_{EQ}+Drift-V*Dauer}}{c_{soll}}\\
+&=\frac{\frac{\SI{0,005}{\gram}+\SI{4,3}{\micro\gram\per\minute}*\SI{1,55}{\minute}*10^{-6}}{\SI{1,0405}{\milli\liter}+\SI{0,7}{\micro\liter\per\minute}*\SI{1,55}{\minute}*10^{-3}}*10^{3}}{\SI{5,0}{\milli\gram\per\milli\liter}}\\
+&=\underline{\underline{0,9614}}
+\end{flalign}
 
 \textbf{Berechnung des Mittelwertes:}
 \begin{flalign}
@@ -169,6 +182,8 @@ s &= \sqrt{\frac{(2,32\%-2,12\%)^2+(1,92\%-2,12\%)^2}{1}}\\
 \end{flalign}
 %	\end{footnotesize}
 
+\newpage
+
 \textbf{Manuelle Berechnung der relativen Standardabweichung:}\\
 Die manuelle Berechnung der relativen Standardabweichung erfolgt analog der \mbox{Gleichung (\ref{gl:S_rel})}. 
 %Die mit dem Taschenrechner erhaltenen Ergebnisse sind in den Tabellen \ref{tab:MesswerteTiterbestimmung} bis \ref{tab:MesswertePoliamid} in der Sektion \glqq Manuell\grqq  \, aufgeführt. 
@@ -178,16 +193,14 @@ Die manuelle Berechnung der relativen Standardabweichung erfolgt analog der \mbo
 	&=0,134321=\underline{\underline{13,43\%}}
 \end{flalign}
 
-\textbf{Manuelle Titerbestimmung:}\\
-Die Berechnung des Titers $f$ der KF-Lösung ist in Gleichung (\ref{gl:titer}) beispielhaft für ein Wertepaar dargestellt. Die verwendeten Werte entstammen der ersten Zeile der Tabelle \ref{tab:MesswerteTiterbestimmung}. 
-\begin{flalign}\label{gl:titer}
-	f&=\frac{c_{ist}}{c_{soll}}\\
-	&=\frac{\frac{m_{Probe}+Drift*Dauer}{V_{EQ}+Drift-V*Dauer}}{c_{soll}}\\
-	&=\frac{\frac{\SI{0,005}{\gram}+\SI{4,3}{\micro\gram\per\minute}*\SI{1,55}{\minute}*10^{-6}}{\SI{1,0405}{\milli\liter}+\SI{0,7}{\micro\liter\per\minute}*\SI{1,55}{\minute}*10^{-3}}*10^{3}}{\SI{5,0}{\milli\gram\per\milli\liter}}\\
-	&=\underline{\underline{0,9614}}
+\textbf{Berechnung des Vertrauensintervalls:}\\
+\begin{flalign}
+conf(\bar{x}) 	&= \bar{x}\pm \frac{t}{\sqrt{N}}*s				
 \end{flalign}
-
-\newpage
+\begin{flalign}
+conf(\bar{x})	&= \SI{0,0407}{\percent}\pm \frac{3,182}{\sqrt{4}}*\SI{0,0030}{\percent}\\
+&= \underline{\SI{0,0407}{\percent}\pm \SI{0,0048}{\percent}}
+\end{flalign}
 
 \textbf{Manuelle Bestimmung des Wassergehaltes:}\\
 Beispielhaft wird nachfolgend in Gleichung (\ref{gl:wassergehalt}) die manuelle Berechnung des Wassergehaltes der flüssigen Probe Isopropanol dargestellt. Dazu wurden Messwerte der Tabelle \ref{tab:MesswerteIsopropanol} für die Berechnung verwendet. Für den Titer wurde der Mittelwert aus Tabelle \ref{tab:MesswerteTiterbestimmung} genutzt.
